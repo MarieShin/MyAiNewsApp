@@ -7,10 +7,8 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import androidx.room.util.query
 import com.hee.myainewsapp.BuildConfig
 import com.hee.myainewsapp.data.ai.GeminiSummarizer
-import com.hee.myainewsapp.data.api.RetrofitInstance
 import com.hee.myainewsapp.data.api.RetrofitInstance.api
 import com.hee.myainewsapp.data.local.ArticleEntity
 import com.hee.myainewsapp.data.paging.NewsPagingSource
@@ -19,7 +17,6 @@ import com.hee.myainewsapp.data.repository.ArticleRepository
 import com.hee.myainewsapp.domain.model.Article
 import com.hee.myainewsapp.presentation.ui.state.NewsUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.DEBUG_PROPERTY_VALUE_ON
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -39,7 +36,6 @@ class NewsViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow<NewsUiState>(NewsUiState.Loading)
-    val uiState = _uiState.asStateFlow()
 
     private val _selectedArticle = MutableStateFlow<Article?>(null)
     val selectedArticle = _selectedArticle.asStateFlow()

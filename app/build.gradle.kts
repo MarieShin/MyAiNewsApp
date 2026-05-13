@@ -53,7 +53,6 @@ android {
 }
 
 dependencies {
-    val room_version = "2.8.4"
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -72,29 +71,33 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
-    implementation("androidx.paging:paging-runtime-ktx:3.2.1")
+    // Network
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.converter.gson)
 
-    implementation("androidx.room:room-runtime:$room_version")
-    ksp("androidx.room:room-compiler:$room_version")
-    implementation("androidx.room:room-ktx:$room_version")
-    implementation("androidx.navigation:navigation-compose:2.7.7")
-    implementation("androidx.paging:paging-compose:3.2.1")
+    // Coroutines & Lifecycle
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
 
-    // hilt
-    implementation("com.google.dagger:hilt-android:2.57.1")
-    ksp("com.google.dagger:hilt-android-compiler:2.57.1")
-    implementation("androidx.hilt:hilt-navigation-compose:1.3.0")
+    // Paging
+    implementation(libs.androidx.paging.runtime.ktx)
+    implementation(libs.androidx.paging.compose)
 
-    implementation("io.coil-kt:coil-compose:2.6.0")
+    // Room
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
 
-    // google ai studio
-    implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
+    // Navigation
+    implementation(libs.androidx.navigation.compose)
 
-//    implementation(platform("com.google.firebase:firebase-bom:34.11.0"))
-//    implementation("com.google.firebase:firebase-ai")
+    // Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
+
+    // Etc
+    implementation(libs.coil.compose)
+    implementation(libs.google.generativeai)
 }
