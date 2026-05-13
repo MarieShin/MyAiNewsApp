@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 📰 AI 뉴스 앱 - MyNewsAI
 
 뉴스를 보고, 검색하고, 마음에 드는 기사를 저장하고, AI로 요약까지 해볼 수 있는 간단한 뉴스 앱입니다.
@@ -34,7 +33,3 @@
 ## 👩‍💻
 
 Android Developer
-
-=======
-# MyAiNewsApp
->>>>>>> d598817da72db75626fabc6489663e6f24a6ca9f
